@@ -372,7 +372,7 @@ if (message.content.startsWith('!expli')) {
      .setColor("RANDOM")
       .addField(`**__Games Orders__**`,`
 
-      『**${prefix}!xo**    | لعبة اكس او 』
+      『**${prefix}xo**    | لعبة اكس او 』
 
       『**${prefix}punsh**  | لعبة عقاب 』
 
