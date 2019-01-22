@@ -382,5 +382,30 @@ if (message.content.startsWith(prefix + 'setplay')) {
 
 
 });
+  
+ client.on('message', message => {
+     if (message.content === prefix +"help") {
+    const embed = new Discord.RichEmbed()
+     .setColor("RANDOM")
+      .addField(`**__Games Orders__**`,`
+
+      『**${prefix}!xo**    | لعبة اكس او 』
+
+      『**${prefix}punsh**  | لعبة عقاب 』
+
+      『**${prefix}choose** | لعبة لو خيروك』
+
+      『**${prefix}expil**  | لعبة صراحة』
+
+      『**${prefix}marim**  | لعبة مريم 』
+
+     prefix = ${prefix}
+     ping = ${Date.now() - message.createdTimestamp}
+     Created by: <@!513730861947158556>
+`)
+
+      message.channel.send({embed});
+     }
+    });	  
 
 client.login(process.env.BOT_TOKEN);
