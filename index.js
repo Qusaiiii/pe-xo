@@ -5,6 +5,8 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+const prefix = "!"
+
 client.on('message' , message => {
   var prefix = "!";
   if(message.author.bot) return;
