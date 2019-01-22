@@ -27,7 +27,7 @@ client.on('message' , message => {
     let player2_id = array_of_mentions[random2].id;
     var turn_id = player1_id;
     var symbol = symbols[0];
-    let initial_message = `Game match between <@${player1_id}> and <@${player2_id}>!`;
+    let initial_message = `اللعبة بين <@${player1_id}> و <@${player2_id}>!`;
     if (player1_id == player2_id) {
       initial_message += '\n_( ألعب مع نفسك)_'
     }
