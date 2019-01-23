@@ -8,6 +8,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-   "discord.js": "^11.3.2"
+   "discord.js": "^11.3.2",
+   "cleverbot.io": "^1.0.4"
   }
 }
