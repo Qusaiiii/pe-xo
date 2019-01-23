@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const cleverbot = require("cleverbot.io");
+const bot = new cleverbot('ShIpPW03HePeDWes','ufEBCAEUWxeHnwuKrTZt5aUWjT0rN4Ir');
+
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -390,5 +394,36 @@ if (message.content.startsWith('!expli')) {
       message.channel.send({embed});
      }
     });	  
+
+
+
+bot.create(function (err, session) {
+  bot.setNick(session);
+  client.on("message", function(message) {
+    var { mentions, content, author, guild, channel, reply} = message
+    if (author.bot) return;
+      if (guild) {
+      let users = mentions.users;
+      if (!users) return;
+      let first = users.first();
+      if(!first) return;
+      if (first.id != client.user.id) return;
+      message.channel.startTyping();
+      content = content.replace(/<@.*?>/g, "")
+      bot.ask(content, function(err, res) {
+        message.channel.stopTyping();
+        message.reply(res)
+      })
+    } else {
+      channel.startTyping();
+      bot.ask(content.replace(/<@.*?>/g, ""), function(err, res) {
+        message.channel.send(res)
+        message.channel.stopTyping();
+      })
+    }
+  });
+});
+
+client.login("Bot Token");
 
 client.login(process.env.BOT_TOKEN);
